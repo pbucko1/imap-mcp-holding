@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <title>IMAP MCP — Use AI with any IMAP inbox</title>
+    <meta name="description" content="Use AI with any IMAP inbox. Connect Fastmail, Proton, or custom domains with a read-only, EU-hosted MCP endpoint. We'll be back soon.">
+    <meta name="author" content="SIW s.r.o.">
+    <link rel="canonical" href="https://imap-mcp.com/">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <meta property="og:title" content="IMAP MCP — Use AI with any IMAP inbox">
+    <meta property="og:description" content="Use AI with any IMAP inbox. Connect Fastmail, Proton, or custom domains with a read-only, EU-hosted MCP endpoint. We'll be back soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imap-mcp.com/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="IMAP MCP — Use AI with any IMAP inbox">
+    <meta name="twitter:description" content="Use AI with any IMAP inbox. Connect Fastmail, Proton, or custom domains with a read-only, EU-hosted MCP endpoint. We'll be back soon.">
+
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"SoftwareApplication","name":"IMAP MCP","url":"https://imap-mcp.com/","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Connect AI assistants to IMAP mailboxes with a read-only MCP endpoint.","publisher":{"@type":"Organization","name":"SIW s.r.o.","url":"https://siw.sk"}}
+    </script>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f5f5f4;
+            --border: #ececea;
+            --border-strong: #d6d6d2;
+            --text: #0e0e0d;
+            --muted: #5b5b58;
+            --dim: #9a9a95;
+            --accent: #0e0e0d;
+            --accent-text: #ffffff;
+            --error: #b13a2c;
+            --ok: #2f6b3a;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0e0e0d;
+                --bg-soft: #1a1a18;
+                --border: #262624;
+                --border-strong: #3a3a37;
+                --text: #f5f5f4;
+                --muted: #a8a8a3;
+                --dim: #6f6f6b;
+                --accent: #f5f5f4;
+                --accent-text: #0e0e0d;
+                --error: #e0705f;
+                --ok: #7fc28c;
+            }
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 96px 16px 64px;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            margin-bottom: 56px;
+        }
+        .brand img { width: 28px; height: 28px; }
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--muted);
+            border: 1px solid var(--border-strong);
+            border-radius: 999px;
+            padding: 4px 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: clamp(34px, 7vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin: 0 0 20px;
+        }
+        .lead { font-size: 17px; color: var(--muted); margin: 0 0 16px; }
+        form { margin-top: 40px; display: grid; gap: 12px; }
+        label { font-size: 13px; color: var(--muted); }
+        input[type=email], textarea {
+            width: 100%;
+            font: inherit;
+            color: var(--text);
+            background: var(--bg);
+            border: 1px solid var(--border-strong);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+        input[type=email] { height: 52px; }
+        textarea { min-height: 96px; resize: vertical; }
+        input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+        button {
+            height: 52px;
+            font: inherit;
+            font-weight: 600;
+            color: var(--accent-text);
+            background: var(--accent);
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:disabled { opacity: 0.6; cursor: wait; }
+        .hp { display: none !important; }
+        .micro { font-size: 13px; color: var(--dim); margin: 0; }
+        .status { font-size: 14px; margin: 0; min-height: 1.4em; }
+        .status--ok { color: var(--ok); }
+        .status--error { color: var(--error); }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 16px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--dim);
+        }
+        footer a { color: var(--muted); }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="brand">
+            <img src="/favicon.svg" alt="" width="28" height="28">
+            <span>IMAP MCP</span>
+        </div>
+
+        <span class="badge">Be back soon</span>
+        <h1>Use AI with the inbox you already have.</h1>
+        <p class="lead">
+            IMAP MCP connects AI assistants to Fastmail, Proton, or your own domain through a read-only,
+            EU-hosted MCP endpoint. No Gmail required.
+        </p>
+        <p class="lead">
+            We're taking a short break to get the next version ready. Leave your email and we'll tell you
+            when it's back.
+        </p>
+
+        <form id="notify" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="IMAP MCP — notify me">
+            <input type="hidden" name="from_name" value="imap-mcp.com">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required autocomplete="email" placeholder="you@yourdomain.com">
+
+            <label for="message">Anything you'd like it to do? (optional)</label>
+            <textarea id="message" name="message"></textarea>
+
+            <div class="h-captcha" data-captcha="true"></div>
+
+            <button type="submit">Notify me</button>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+            <p class="micro">We'll only use your email to tell you when IMAP MCP is back. Form delivery by Web3Forms.</p>
+        </form>
+    </main>
+
+    <footer>
+        Powered by <a href="https://siw.sk" rel="noopener">SIW.sk</a> · © SIW s.r.o.
+    </footer>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script>
+        (function () {
+            var form = document.getElementById('notify');
+            var status = document.getElementById('status');
+            var button = form.querySelector('button');
+
+            function show(message, kind) {
+                status.textContent = message;
+                status.className = 'status status--' + kind;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var data = new FormData(form);
+                if (!data.get('h-captcha-response')) {
+                    show('Please complete the captcha.', 'error');
+                    return;
+                }
+
+                button.disabled = true;
+                show('Sending…', 'ok');
+
+                fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: data
+                })
+                    .then(function (response) { return response.json(); })
+                    .then(function (json) {
+                        if (json.success) {
+                            form.reset();
+                            show("Thanks, you're on the list.", 'ok');
+                        } else {
+                            show(json.message || 'Something went wrong. Please try again.', 'error');
+                        }
+                    })
+                    .catch(function () {
+                        show('Something went wrong. Please try again.', 'error');
+                    })
+                    .finally(function () {
+                        button.disabled = false;
+                        if (window.hcaptcha) { window.hcaptcha.reset(); }
+                    });
+            });
+        })();
+    </script>
+</body>
+</html>
